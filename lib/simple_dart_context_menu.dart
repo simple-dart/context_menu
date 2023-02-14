@@ -19,22 +19,19 @@ class ContextMenu {
 
   String get maxHeight => menuPanel.element.style.maxHeight;
 
-  Future<String> showContextMenu(List<String> actions, num x, num y) {
+  Future<String> showContextMenu(List<String> actions, int x, int y) {
     for (final action in actions) {
       final actionElement = Label()
         ..addCssClass('ContextMenuAction')
         ..caption = action;
-      actionElement.element.onClick.listen((event) {
+      actionElement.onClick.listen((event) {
         completer.complete(action);
         closeMenu();
       });
       menuPanel.add(actionElement);
     }
-    menuPanel.element.style
-      ..top = '${y}px'
-      ..left = '${x}px'
-      ..overflow = 'auto';
-    modalController.showComponentModal(menuPanel);
+    menuPanel.element.style.overflow = 'auto';
+    modalController.showModal(menuPanel, left: x, top: y);
     return completer.future;
   }
 
