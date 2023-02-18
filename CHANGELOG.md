@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Upgrade modal_controller to 0.0.7
+
 ## 0.0.2
 
 - Upgrade modal_controller to 0.0.2

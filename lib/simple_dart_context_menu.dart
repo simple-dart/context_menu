@@ -31,7 +31,7 @@ class ContextMenu {
       menuPanel.add(actionElement);
     }
     menuPanel.element.style.overflow = 'auto';
-    modalController.showModal(menuPanel, left: x, top: y);
+    modalController.showModal(menuPanel, left: '${x}px', top: '${y}px');
     return completer.future;
   }
 
